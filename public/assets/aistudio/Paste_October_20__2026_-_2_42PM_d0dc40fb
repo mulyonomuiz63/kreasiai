@@ -1,0 +1,760 @@
+# MASTER PROMPT: MEMBANGUN APLIKASI AI VIDEO & IMAGE STUDIO BERBASIS SAAS
+
+Bertindaklah sebagai Senior Full-Stack Developer, SaaS Architect, UI/UX Designer, AI Engineer, Payment Integration Engineer, Database Architect, dan Cybersecurity Engineer.
+
+Saya ingin membangun aplikasi web SaaS profesional untuk membuat video AI, gambar AI, menghasilkan konten melalui chatbot, serta menggunakan AI Agent. Aplikasi ini akan dijual melalui sistem langganan berbayar menggunakan Midtrans di Indonesia.
+
+Buat aplikasi yang benar-benar memiliki arsitektur frontend, backend, database, autentikasi, sistem kredit/token, pembayaran, manajemen pengguna, dan integrasi AI. Jangan hanya membuat desain statis atau landing page. Seluruh tombol dan fitur harus memiliki fungsi nyata atau status yang jelas jika memerlukan konfigurasi API eksternal.
+
+Nama aplikasi sementara: **KREASI AI STUDIO**. Buat nama aplikasi mudah diganti melalui konfigurasi.
+
+## 1. TEKNOLOGI DAN ARSITEKTUR
+
+Gunakan teknologi modern yang stabil dan mudah dikembangkan:
+
+- Frontend: Next.js, TypeScript, dan Tailwind CSS.
+- Komponen antarmuka: shadcn/ui atau komponen setara yang konsisten.
+- Backend: Next.js server-side routes atau backend API yang terstruktur.
+- Database: PostgreSQL.
+- ORM: Prisma.
+- Autentikasi: Auth.js dengan Google OAuth dan login email/password.
+- Pembayaran: Midtrans Snap dengan server-side transaction creation dan webhook.
+- Penyimpanan media: layanan object storage kompatibel S3.
+- Pemrosesan video AI: sistem job queue dan worker agar proses generasi berjalan di background.
+- Validasi data: Zod atau library sejenis.
+- Pengujian: unit test dan integration test untuk fungsi penting.
+
+Gunakan versi library yang kompatibel satu sama lain. Jika lingkungan Grok menyediakan stack atau layanan bawaan yang berbeda, sesuaikan tanpa menghilangkan fitur dan keamanan yang diminta.
+
+Pisahkan frontend, backend, service AI, service pembayaran, database, dan worker dengan struktur yang jelas.
+
+## 2. DESAIN UI/UX
+
+Buat desain modern, premium, profesional, responsif, dan mudah digunakan, terinspirasi oleh aplikasi AI generatif modern.
+
+Palet warna:
+- Background utama: putih atau abu-abu sangat terang pada landing page.
+- Dashboard aplikasi: dark mode opsional dengan latar charcoal.
+- Warna aksen: oranye terang.
+- Tombol utama: oranye dengan teks putih.
+- Kartu harga: sudut membulat, border halus, bayangan lembut.
+- Font: sans-serif modern.
+- Animasi: transisi halus, loading skeleton, progress indicator, dan notifikasi toast.
+
+Landing page dan dashboard harus responsif untuk desktop, tablet, serta smartphone.
+
+Gunakan ikon yang konsisten. Hindari tampilan yang terlalu ramai.
+
+## 3. LANDING PAGE
+
+Buat landing page pemasaran lengkap dengan bagian berikut.
+
+### A. Navbar
+- Logo dan nama aplikasi.
+- Fitur.
+- Model AI.
+- Harga paket.
+- FAQ.
+- Tombol Masuk.
+- Tombol Daftar Gratis.
+- Menu mobile.
+
+### B. Hero section
+Judul utama:
+
+"Buat Video AI dan Gambar Profesional dalam Hitungan Menit"
+
+Subjudul:
+
+"Satu platform untuk menghasilkan video AI, gambar kreatif, konten pemasaran, dan ide visual dengan berbagai model AI dalam satu tempat."
+
+CTA:
+- Mulai Gratis.
+- Lihat Paket Harga.
+
+Tambahkan preview hasil video dan gambar AI yang menarik. Jangan menampilkan klaim kualitas, kecepatan, atau kemampuan model yang belum terbukti.
+
+### C. Fitur unggulan
+Tampilkan kartu fitur:
+1. AI Video Generator.
+2. AI Image Generator.
+3. AI Chat Assistant.
+4. Berbagai pilihan model AI.
+5. AI Agent untuk menjalankan alur kerja.
+6. Riwayat generasi dan galeri hasil.
+7. Sistem kredit yang transparan.
+8. Pengelolaan hasil dan unduhan.
+
+### D. Cara kerja
+1. Daftar atau login.
+2. Pilih model AI.
+3. Masukkan prompt atau unggah gambar referensi.
+4. Atur durasi, rasio, resolusi, dan parameter lain yang didukung model.
+5. Klik Generate.
+6. Pantau progres.
+7. Lihat, unduh, atau gunakan kembali hasil.
+
+### E. Pricing section
+Buat tiga kartu harga yang mengikuti referensi gambar yang saya lampirkan.
+
+Gunakan harga rupiah, harga per bulan sebagai ekuivalen, periode tagihan tiga bulan, harga normal yang dicoret, label diskon, serta tombol upgrade.
+
+**PAKET STARTER**
+
+Nama: Starter
+
+Deskripsi: Cocok untuk mencoba dan pemakaian ringan.
+
+Harga ekuivalen: Rp66.000/bulan.
+
+Total pembayaran per tiga bulan: Rp198.000.
+
+Harga pembanding sebelum diskon: Rp225.000 per tiga bulan.
+
+Diskon: sekitar 12%.
+
+Tombol: "Mulai dengan Starter".
+
+Keunggulan:
+- Akses chatbot AI.
+- AI Image Generator.
+- AI Video Generator dengan model yang tersedia pada paket Starter.
+- Pilihan rasio dan resolusi sesuai dukungan model.
+- Kuota kredit terbatas.
+- Riwayat generasi.
+- Unduhan hasil.
+- Dukungan standar.
+
+**PAKET PRO**
+
+Nama: Pro
+
+Deskripsi: Untuk pemakaian harian profesional.
+
+Harga ekuivalen: Rp126.667/bulan.
+
+Total pembayaran per tiga bulan: Rp380.000.
+
+Harga pembanding sebelum diskon: Rp597.000 per tiga bulan.
+
+Diskon: sekitar 36%.
+
+Tombol: "Upgrade ke Pro".
+
+Keunggulan:
+- Semua fitur Starter.
+- Kuota kredit lebih besar.
+- Akses model video dan gambar tambahan.
+- Pilihan durasi video lebih banyak sesuai dukungan model.
+- Resolusi lebih tinggi jika tersedia.
+- Prioritas antrean dibanding paket Starter.
+- AI Agent untuk workflow yang tersedia.
+- Riwayat generasi dan manajemen aset lebih lengkap.
+
+**PAKET ULTRA**
+
+Nama: Ultra
+
+Deskripsi: Untuk power user dan tim kecil.
+
+Harga ekuivalen: Rp279.333/bulan.
+
+Total pembayaran per tiga bulan: Rp838.000.
+
+Harga pembanding sebelum diskon: Rp1.047.000 per tiga bulan.
+
+Diskon: sekitar 20%.
+
+Tombol: "Upgrade ke Ultra".
+
+Tambahkan label promosi di atas kartu: "PALING WORTH".
+
+Keunggulan:
+- Semua fitur Pro.
+- Kuota kredit paling besar.
+- Akses model premium yang dikonfigurasi untuk paket Ultra.
+- Pilihan resolusi dan durasi tertinggi yang benar-benar didukung model.
+- Prioritas antrean tertinggi sesuai kebijakan sistem.
+- AI Agent dengan batas penggunaan lebih besar.
+- Workflow generasi berulang.
+- Fitur pengelolaan aset dan riwayat lanjutan.
+- Dukungan prioritas.
+
+PENTING:
+Harga dan kuota paket harus dapat diubah dari admin dashboard tanpa mengubah kode aplikasi. Kuota kredit setiap paket dapat dikonfigurasi oleh administrator.
+
+Tampilkan ekuivalen harga per bulan dengan jelas, tetapi tegaskan bahwa pengguna membayar total harga tiga bulan di muka.
+
+Pastikan nominal dan diskon dihitung konsisten. Harga paket tidak boleh berubah diam-diam ketika checkout.
+
+### F. FAQ dan footer
+FAQ tentang:
+- Cara kerja kredit.
+- Model AI yang tersedia.
+- Cara berlangganan.
+- Pembayaran Midtrans.
+- Masa berlaku paket.
+- Pengembalian dana.
+- Keamanan data.
+- Cara mengunduh hasil.
+
+Tambahkan halaman Syarat dan Ketentuan, Kebijakan Privasi, Kebijakan Pembatalan, dan Kontak.
+
+## 4. AUTENTIKASI PENGGUNA
+
+Sediakan fitur:
+- Daftar menggunakan email, password, dan nama.
+- Login email dan password.
+- Login menggunakan Google.
+- Logout.
+- Verifikasi email jika didukung konfigurasi.
+- Lupa password dan reset password.
+- Session management yang aman.
+- Proteksi halaman dashboard.
+- Role user dan admin.
+
+Password wajib di-hash menggunakan algoritma yang aman. Jangan pernah menyimpan password dalam bentuk teks biasa.
+
+Hindari pembuatan akun ganda akibat login Google dan email yang sama. Account linking harus dilakukan dengan mekanisme verifikasi yang aman.
+
+Setelah registrasi, pengguna mendapat akun dan dashboard. Kredit gratis, jika diaktifkan, harus dibatasi dan diatur oleh admin.
+
+## 5. DASHBOARD PENGGUNA
+
+Setelah login, tampilkan dashboard dengan sidebar.
+
+Menu:
+- Beranda.
+- Chat AI.
+- Buat Video.
+- Buat Gambar.
+- AI Agent.
+- Galeri Saya.
+- Riwayat Generasi.
+- Kredit dan Pemakaian.
+- Paket dan Langganan.
+- Riwayat Pembayaran.
+- Pengaturan Akun.
+- Bantuan.
+
+Bagian atas dashboard:
+- Sapaan pengguna.
+- Paket aktif.
+- Sisa kredit.
+- Tombol tambah kredit atau upgrade.
+- Notifikasi.
+- Avatar profil.
+
+Dashboard harus menampilkan ringkasan penggunaan kredit, generasi terakhir, status pekerjaan yang sedang berjalan, dan informasi masa berlaku langganan.
+
+## 6. AI CHAT ASSISTANT
+
+Buat antarmuka chatbot yang nyaman digunakan, mirip aplikasi AI chat modern.
+
+Fitur:
+- Percakapan multi-turn.
+- Riwayat percakapan.
+- Membuat percakapan baru.
+- Mengganti judul percakapan.
+- Menghapus percakapan.
+- Menampilkan jawaban secara streaming jika provider mendukung.
+- Copy jawaban.
+- Menggunakan jawaban sebagai prompt video atau gambar.
+- Meminta AI memperbaiki prompt.
+- Tombol Generate Video dan Generate Image langsung dari percakapan.
+- Indikator penggunaan kredit.
+
+Jangan membuat chatbot hanya berupa balasan hardcoded. Gunakan provider AI yang dikonfigurasi melalui backend. Jika API belum diatur, tampilkan pesan konfigurasi yang jelas.
+
+## 7. AI VIDEO GENERATOR
+
+Buat halaman generator video profesional dengan form di panel kiri dan preview hasil di panel kanan.
+
+Input:
+- Prompt video.
+- Negative prompt jika didukung model.
+- Upload gambar referensi.
+- Mode text-to-video.
+- Mode image-to-video.
+- Pilihan model AI.
+- Durasi video.
+- Rasio aspek.
+- Resolusi atau pixel.
+- Jumlah hasil jika didukung.
+- Seed jika didukung.
+- Opsi tambahan khusus model.
+
+Pilihan rasio aspek:
+- 9:16.
+- 16:9.
+- 1:1.
+- 4:3.
+- 3:4.
+
+Pilihan resolusi dapat mencakup 480p, 720p, 1080p, atau pilihan lain hanya jika model yang dipilih benar-benar mendukungnya.
+
+Pilihan durasi video harus dinamis berdasarkan model. Contohnya 5, 8, 10, atau 15 detik hanya boleh tersedia jika didukung oleh model tersebut.
+
+Jangan menampilkan opsi yang tidak didukung oleh provider.
+
+Ketika model dipilih:
+- Tampilkan deskripsi model.
+- Tampilkan kemampuan dan batasannya.
+- Perbarui pilihan durasi.
+- Perbarui rasio dan resolusi.
+- Hitung estimasi kredit sebelum pengguna menekan Generate.
+- Tampilkan perkiraan waktu proses jika ada data yang dapat dipercaya.
+
+Saat pengguna menekan Generate:
+1. Validasi input pada backend.
+2. Periksa autentikasi dan status langganan.
+3. Periksa saldo kredit.
+4. Periksa batas penggunaan dan kemampuan model.
+5. Tampilkan estimasi biaya.
+6. Buat job generasi pada server.
+7. Deduksi atau reservasi kredit secara atomik.
+8. Kirim job ke provider AI melalui service backend.
+9. Simpan ID job provider.
+10. Pantau status queued, processing, completed, atau failed.
+11. Simpan hasil ke object storage.
+12. Tampilkan video dalam preview player.
+13. Sediakan unduh video dan lihat detail generasi.
+
+Gunakan polling atau webhook provider jika tersedia. Untuk job yang gagal, gunakan kebijakan pengembalian kredit yang jelas dan idempotent.
+
+Jangan menahan request HTTP selama proses video yang lama. Gunakan worker atau mekanisme background job.
+
+## 8. AI IMAGE GENERATOR
+
+Buat generator gambar dengan fitur:
+- Text-to-image.
+- Image-to-image jika didukung.
+- Prompt.
+- Negative prompt jika didukung.
+- Pilihan model.
+- Rasio aspek.
+- Resolusi atau ukuran gambar.
+- Jumlah gambar.
+- Seed dan parameter lain jika tersedia.
+- Preview hasil.
+- Download PNG atau JPEG sesuai format hasil.
+- Simpan ke galeri.
+- Buat ulang dengan prompt serupa.
+- Gunakan gambar sebagai referensi video jika didukung.
+
+Estimasi kredit harus tampil sebelum proses dimulai. Periksa kemampuan masing-masing model di backend.
+
+## 9. SISTEM MODEL AI DAN PROVIDER
+
+Buat sistem integrasi provider yang modular.
+
+Sediakan abstraksi seperti:
+- AIProvider.
+- VideoGenerationProvider.
+- ImageGenerationProvider.
+- ChatProvider.
+
+Buat adapter yang memisahkan implementasi setiap provider dari antarmuka pengguna.
+
+Administrator harus dapat mengatur:
+- Nama model.
+- Provider.
+- Jenis tugas.
+- Status aktif/nonaktif.
+- Paket yang diperbolehkan.
+- Batas durasi.
+- Rasio aspek.
+- Resolusi.
+- Biaya kredit.
+- Batas jumlah hasil.
+- Prioritas antrean.
+- Batas penggunaan.
+
+Jangan mengarang endpoint, API key, atau kemampuan model yang tidak nyata. Integrasikan model berdasarkan dokumentasi resmi provider yang tersedia.
+
+Jika API belum dikonfigurasi, tampilkan status "Belum dikonfigurasi" dan instruksi setup. Jangan berpura-pura video atau gambar berhasil dibuat.
+
+Sediakan mock provider khusus development/testing, terpisah tegas dari production.
+
+## 10. SISTEM KREDIT/TOKEN
+
+Gunakan kredit internal aplikasi sebagai unit pemakaian.
+
+Bedakan:
+- Kredit internal aplikasi.
+- Token input/output provider LLM.
+- Biaya provider video dan gambar.
+- Biaya aktual dalam mata uang provider.
+
+Tampilkan saldo kredit di dashboard.
+
+Buat halaman penggunaan dengan informasi:
+- Waktu.
+- Jenis generasi.
+- Model.
+- Prompt atau judul pekerjaan.
+- Kredit yang digunakan.
+- Status.
+- ID pekerjaan.
+
+Semua tarif kredit dapat dikonfigurasi oleh admin.
+
+Buat ledger transaksi kredit yang immutable, mencakup:
+- Pemberian kredit.
+- Pemakaian kredit.
+- Reservasi kredit.
+- Pengembalian kredit.
+- Penyesuaian oleh admin.
+- Referensi job atau transaksi.
+- Timestamp.
+
+Gunakan transaksi database untuk mencegah saldo negatif, double deduction, dan race condition.
+
+Jangan hanya menyimpan saldo akhir. Saldo harus dapat direkonsiliasi dari ledger.
+
+## 11. PEMBAYARAN MIDTRANS
+
+Integrasikan Midtrans Snap menggunakan akun merchant milik saya.
+
+Alur checkout:
+1. Pengguna memilih paket Starter, Pro, atau Ultra.
+2. Klik tombol Mulai atau Upgrade.
+3. Jika belum login, arahkan ke login/registrasi lalu kembalikan pengguna ke paket yang dipilih.
+4. Backend membaca harga paket resmi dari database.
+5. Backend membuat order unik dan menyimpan status pending.
+6. Backend meminta Snap transaction token dari Midtrans.
+7. Frontend membuka popup atau halaman pembayaran Snap.
+8. Pengguna menyelesaikan pembayaran melalui metode yang disediakan Midtrans.
+9. Frontend menampilkan status sementara.
+10. Backend menerima notifikasi webhook Midtrans.
+11. Backend memverifikasi keaslian notifikasi dengan mekanisme resmi Midtrans dan memeriksa status transaksi.
+12. Setelah pembayaran dinyatakan sah, backend mengaktifkan paket dan memberikan kuota kredit sesuai konfigurasi.
+13. Dashboard diperbarui otomatis.
+14. Pengguna dapat langsung menggunakan model yang diizinkan oleh paketnya.
+
+Ketentuan keamanan:
+- Server key Midtrans hanya berada di backend.
+- Jangan mengekspos server key melalui JavaScript browser.
+- Gunakan client key hanya sesuai kebutuhan integrasi resmi.
+- Harga tidak boleh dipercayakan kepada nilai yang dikirim browser.
+- Validasi nominal, order ID, status transaksi, dan identitas transaksi.
+- Verifikasi notifikasi menggunakan mekanisme resmi Midtrans.
+- Gunakan HTTPS di production.
+- Terapkan idempotency untuk webhook dan pemberian kredit.
+- Jangan mengaktifkan paket hanya berdasarkan callback frontend.
+- Tangani status pending, settlement, capture, deny, expire, cancel, dan refund sesuai jenis pembayaran serta dokumentasi Midtrans.
+- Jangan menganggap setiap status pembayaran berhasil.
+- Simpan riwayat perubahan status.
+- Sediakan mekanisme rekonsiliasi jika webhook terlambat atau gagal.
+
+Gunakan SDK dan dokumentasi Midtrans resmi yang sesuai dengan environment.
+
+Sediakan environment sandbox dan production dengan konfigurasi terpisah.
+
+Buat halaman checkout, status pembayaran, riwayat transaksi, dan detail invoice.
+
+## 12. ATURAN LANGGANAN
+
+Paket berlaku tiga bulan sejak tanggal aktivasi yang sah.
+
+Buat logika:
+- Paket aktif.
+- Paket kedaluwarsa.
+- Upgrade paket.
+- Perpanjangan.
+- Riwayat langganan.
+- Tanggal mulai dan berakhir.
+- Kebijakan perubahan paket.
+- Pembayaran pending.
+- Refund dan pembatalan jika berlaku.
+
+Tentukan kebijakan upgrade dan kredit yang transparan agar tidak terjadi pemberian kredit ganda. Jangan otomatis menganggap pembelian baru sebagai perpanjangan atau upgrade tanpa aturan yang eksplisit.
+
+Jika paket kedaluwarsa, batasi model premium sesuai kebijakan, tetapi jangan menghapus hasil lama pengguna secara otomatis.
+
+## 13. AI AGENT
+
+Buat menu AI Agent untuk membantu pengguna menjalankan workflow otomatis.
+
+Sediakan beberapa jenis agent:
+
+A. Content Creator Agent
+- Membuat ide konten.
+- Membuat naskah video.
+- Membuat prompt gambar.
+- Membuat prompt video.
+- Menyusun storyboard per scene.
+- Menghasilkan variasi hook dan CTA.
+
+B. Marketing Agent
+- Membuat ide kampanye.
+- Membuat caption.
+- Membuat deskripsi produk.
+- Membuat variasi materi promosi.
+- Menyiapkan prompt kreatif sesuai platform tujuan.
+
+C. Image Workflow Agent
+- Membuat prompt.
+- Memeriksa parameter gambar.
+- Menjalankan generasi melalui provider yang tersedia.
+- Menyimpan hasil ke galeri.
+
+D. Video Workflow Agent
+- Membuat storyboard.
+- Menyiapkan prompt per scene.
+- Memvalidasi parameter model.
+- Menjalankan generasi video.
+- Menyimpan status dan hasil.
+
+E. Custom Agent
+- Pengguna memberi nama agent.
+- Menentukan instruksi.
+- Memilih model yang diizinkan.
+- Memilih tools yang tersedia.
+- Mengatur workflow.
+- Menyimpan konfigurasi.
+
+F. Workflow Builder
+- Membuat alur langkah demi langkah.
+- Menampilkan status setiap langkah.
+- Pause, resume, dan cancel jika memungkinkan.
+- Menampilkan riwayat eksekusi.
+- Menghitung kredit setiap langkah.
+- Meminta persetujuan sebelum tindakan yang menggunakan kredit berbayar.
+
+Arsitektur agent harus menggunakan tool yang terdaftar dan memiliki izin terbatas. Jangan memberikan akses langsung tanpa pembatasan ke database, sistem operasi, rahasia aplikasi, atau endpoint internal.
+
+Tambahkan batas iterasi, timeout, batas biaya, validasi output, serta audit log. Agent tidak boleh melanjutkan pekerjaan berbayar jika saldo tidak mencukupi.
+
+## 14. ADMIN DASHBOARD
+
+Buat area admin terpisah yang hanya dapat diakses oleh role admin.
+
+Menu admin:
+- Overview.
+- Pengguna.
+- Paket langganan.
+- Transaksi.
+- Langganan aktif.
+- Model AI.
+- Provider.
+- Tarif kredit.
+- Penggunaan AI.
+- Job generasi.
+- AI Agent.
+- Pengaturan aplikasi.
+- Audit log.
+
+Overview menampilkan:
+- Total pengguna terdaftar.
+- Pengguna baru.
+- Total pembeli.
+- Jumlah pelanggan aktif.
+- Jumlah langganan aktif.
+- Transaksi berhasil.
+- Transaksi pending.
+- Transaksi gagal.
+- Total pendapatan dari transaksi berhasil.
+- Penggunaan kredit.
+- Estimasi biaya provider AI.
+- Margin kotor estimasi.
+- Job video dan gambar.
+- Job gagal.
+- Model paling banyak digunakan.
+
+Sediakan filter tanggal dan pencarian.
+
+Menu pengguna:
+- Melihat profil.
+- Melihat paket.
+- Melihat saldo kredit.
+- Melihat riwayat pembayaran.
+- Melihat penggunaan AI.
+- Memblokir atau mengaktifkan akun dengan audit log.
+
+Menu paket:
+- Mengubah nama paket.
+- Mengubah harga.
+- Mengubah kuota kredit.
+- Mengubah durasi langganan.
+- Mengatur akses model.
+- Mengatur batas penggunaan.
+- Mengatur fitur.
+- Mengaktifkan atau menonaktifkan paket.
+
+Menu model:
+- Tambah atau edit model.
+- Konfigurasi provider.
+- Konfigurasi parameter.
+- Tarif kredit.
+- Akses paket.
+- Status integrasi.
+- Status kesehatan provider jika dapat diperiksa dengan aman.
+
+Menu transaksi:
+- Order ID.
+- Pengguna.
+- Paket.
+- Nominal.
+- Status.
+- Waktu pembayaran.
+- ID transaksi Midtrans.
+- Detail notifikasi dan histori status.
+
+Data keuangan hanya berdasarkan transaksi yang terverifikasi. Bedakan pendapatan bruto, refund, estimasi biaya provider, dan margin estimasi.
+
+Lindungi semua endpoint admin di backend, bukan hanya menyembunyikan menu di frontend.
+
+## 15. STRUKTUR DATABASE
+
+Buat skema database yang rapi menggunakan Prisma, setidaknya mencakup:
+
+- User.
+- Account.
+- Session.
+- VerificationToken.
+- SubscriptionPlan.
+- PlanFeature.
+- AIModel.
+- AIProviderConfig.
+- Subscription.
+- PaymentOrder.
+- PaymentEvent.
+- CreditAccount.
+- CreditLedger.
+- GenerationJob.
+- GeneratedAsset.
+- Conversation.
+- ChatMessage.
+- Agent.
+- AgentTool.
+- AgentExecution.
+- AgentExecutionStep.
+- UsageRecord.
+- AuditLog.
+- AppSetting.
+
+Tambahkan relasi, index, unique constraints, timestamp, status enum, dan foreign key yang sesuai.
+
+Gunakan soft delete jika dibutuhkan, khususnya untuk data yang masih diperlukan untuk audit atau rekonsiliasi.
+
+Jangan menyimpan rahasia API provider dalam bentuk plaintext yang dapat dibaca oleh pengguna biasa.
+
+## 16. KEAMANAN DAN RELIABILITAS
+
+Terapkan:
+- Validasi input di server.
+- Rate limiting.
+- CSRF protection sesuai mekanisme autentikasi.
+- Proteksi terhadap XSS dan SQL injection.
+- Pembatasan ukuran serta jenis file upload.
+- Pemeriksaan kepemilikan aset.
+- Signed URL dengan masa berlaku untuk media privat.
+- Authorization pada setiap endpoint.
+- Pemisahan role user dan admin.
+- Secret management melalui environment variables.
+- Logging yang tidak membocorkan token atau password.
+- Proteksi webhook dan idempotency.
+- Pengendalian biaya AI.
+- Timeout dan retry terbatas.
+- Penanganan job yang macet.
+- Backup database dan strategi pemulihan.
+
+Jangan menaruh API key dalam source code, prompt frontend, atau repository publik.
+
+## 17. ENVIRONMENT DAN KONFIGURASI
+
+Sediakan file `.env.example` yang mencakup variabel sesuai implementasi, misalnya:
+
+DATABASE_URL=
+AUTH_SECRET=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+MIDTRANS_SERVER_KEY=
+MIDTRANS_CLIENT_KEY=
+MIDTRANS_IS_PRODUCTION=false
+AI_PROVIDER_API_KEY=
+OBJECT_STORAGE_ENDPOINT=
+OBJECT_STORAGE_BUCKET=
+OBJECT_STORAGE_ACCESS_KEY=
+OBJECT_STORAGE_SECRET_KEY=
+APP_URL=
+
+Tambahkan variabel provider lain sesuai integrasi yang benar-benar dibuat.
+
+Jangan memasukkan nilai rahasia sungguhan. Dokumentasikan cara mendapatkan setiap kredensial dan mengonfigurasinya.
+
+## 18. DATA AWAL DAN SEED
+
+Buat seed database untuk:
+- Paket Starter, Pro, dan Ultra.
+- Harga dan masa langganan sesuai konfigurasi awal.
+- Daftar model contoh dengan label jelas apabila belum terkoneksi.
+- Tarif kredit awal yang dapat diubah admin.
+- Pengaturan aplikasi.
+- Role pengguna.
+
+Jangan membuat akun admin dengan password default yang tidak aman. Buat mekanisme bootstrap admin melalui environment atau command setup yang aman.
+
+## 19. PENGUJIAN DAN KRITERIA SELESAI
+
+Buat dan jalankan pengujian untuk alur berikut:
+
+1. Registrasi email/password.
+2. Login Google.
+3. Proteksi halaman dashboard.
+4. Pengguna memilih paket.
+5. Checkout Midtrans sandbox.
+6. Webhook pembayaran terverifikasi.
+7. Paket aktif setelah pembayaran sah.
+8. Kredit diberikan tepat satu kali.
+9. Model yang diizinkan dapat digunakan.
+10. Kredit tidak bisa menjadi negatif akibat request bersamaan.
+11. Generasi gambar melalui provider yang terkoneksi.
+12. Generasi video melalui job queue.
+13. Pengembalian kredit saat job gagal sesuai kebijakan.
+14. Pengguna tidak dapat mengakses aset pengguna lain.
+15. User tidak dapat membuka dashboard admin.
+16. Admin dapat memonitor transaksi dan pengguna.
+17. Agent tidak dapat melampaui batas kredit atau izin tool.
+18. Paket kedaluwarsa ditangani dengan benar.
+
+Buat dokumentasi setup lokal, migrasi database, seed, menjalankan worker, konfigurasi OAuth Google, integrasi Midtrans sandbox, integrasi provider AI, dan deployment production.
+
+## 20. CARA MENGERJAKAN PROYEK
+
+Kerjakan secara bertahap dan terstruktur:
+
+Tahap 1: Rancang arsitektur, struktur folder, skema database, dan desain UI.
+
+Tahap 2: Implementasikan landing page dan pricing yang responsif.
+
+Tahap 3: Implementasikan autentikasi dan database.
+
+Tahap 4: Implementasikan dashboard pengguna dan admin.
+
+Tahap 5: Implementasikan paket, subscription, credit ledger, dan Midtrans sandbox.
+
+Tahap 6: Implementasikan AI chat, image generator, video generator, dan job queue menggunakan provider nyata yang dikonfigurasi.
+
+Tahap 7: Implementasikan AI Agent dan workflow.
+
+Tahap 8: Implementasikan pengujian, keamanan, dokumentasi, dan persiapan deployment.
+
+Pada setiap tahap:
+- Tulis kode yang benar-benar dapat dijalankan.
+- Tampilkan file yang dibuat atau diubah.
+- Jelaskan dependency dan konfigurasi yang diperlukan.
+- Jalankan pemeriksaan dan pengujian yang tersedia.
+- Perbaiki error sebelum melanjutkan.
+- Jangan mengganti integrasi nyata dengan tombol palsu.
+- Jangan menyatakan fitur sudah berhasil jika belum diuji.
+- Jika suatu fitur memerlukan API key atau layanan eksternal, selesaikan struktur integrasinya dan jelaskan cara mengaktifkannya.
+
+Prioritaskan MVP yang benar-benar berjalan terlebih dahulu, kemudian lanjutkan fitur lanjutan tanpa menghilangkan persyaratan inti.
+
+HASIL AKHIR YANG SAYA INGINKAN:
+
+Sebuah aplikasi SaaS AI Studio yang memiliki landing page premium, tiga paket berlangganan, registrasi dan login Google, checkout Midtrans, aktivasi paket otomatis setelah pembayaran terverifikasi, dashboard chatbot, generator gambar dan video AI, sistem kredit, AI Agent, galeri hasil, serta admin dashboard untuk monitoring pengguna, pembeli, transaksi, penggunaan, dan pendapatan.
+
+Mulai dengan menjelaskan arsitektur dan struktur proyek, lalu langsung implementasikan tahap pertama. Jangan berhenti hanya pada mockup atau penjelasan konsep.
